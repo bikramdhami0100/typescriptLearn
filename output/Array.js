@@ -1,0 +1,12 @@
+"use strict";
+const marks = [10, 20, 30, 40, 50];
+const students = ["ram", "shyam", "hari"];
+const readData = [10, 20, 30, 40, 50];
+// readData.push(100);
+marks.push(100);
+const empData = [100, "ram", true, "kathmandu"];
+empData.push(100);
+const empData2 = [100, "ram", true, "kathmandu"];
+// empData2.push(100);
+console.log(empData2[2]);
+console.log(empData);
