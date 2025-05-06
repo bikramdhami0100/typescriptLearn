@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* App.css */
+
+/* Add or ensure the keyframe animation is defined */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Add a slight movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards; /* Adjusted duration and timing */
+}
+
+/* Define more specific animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards; /* Longer duration */
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Add animation delays using Tailwind's JIT mode or a custom plugin if needed,
+   or define them manually if Tailwind doesn't support it out-of-the-box
+   for simple cases like this, inline styles might also work:
+   style={{ animationDelay: '0.2s' }}
+   But using utility classes is better. Assuming standard Tailwind config
+   might need manual setup for true `animate-fadeInUp delay-XXX` */
+
+/* Example of how to configure delays in tailwind.config.js:
+   extend: {
+     animation: {
+       fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+       fadeInRight: 'fadeInRight 0.8s ease-out forwards',
+     },
+     animationDelay: { // Requires tailwindcss-animation-delay plugin or similar
+       '100': '100ms',
+       '200': '200ms',
+       // ... etc
+     }
+   },
+   keyframes: {
+     fadeInUp: { ... },
+     fadeInRight: { ... }
+   }
+*/
+
+/* If you don't have a plugin for delays, you can use inline styles or
+   more complex CSS. For this example, we'll use inline styles for delays
+   directly in the JSX where needed. (Updated JSX to use inline styles for delay) */
