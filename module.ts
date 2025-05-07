@@ -4,7 +4,7 @@ import UserType from "./types/user";
 const userData:UserType={
     name:"Bikram Dhami",
     age:22,
-     password:"1234"
+    password:"1234"
 }
 
 
