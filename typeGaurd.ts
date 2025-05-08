@@ -30,7 +30,7 @@
 // checkData(23);
 
 
-class Product{
+class Product2{
     name:string;
     price:number;
     pid:number;
@@ -44,7 +44,7 @@ class Product{
     }
 }
 
-class Book extends Product{
+class Book extends Product2{
     author:string;
     constructor(name:string,price:number,pid:number,author:string){
         super(name,price,pid);
@@ -55,30 +55,35 @@ class Book extends Product{
     }
 }
 
-class Movie extends Product{
-    director:string;
-    constructor(name:string,price:number,pid:number,director:string){
-        super(name,price,pid);
-        this.director=director;
-    }
-    showData(): void {
-        console.log(this.name,this.price,this.pid,this.director);
-    }
+
+
+function showDetails(objects:Product2|Book){
+     if(objects instanceof Product2){
+        console.log("This is Products")
+     }else{
+        console.log("This is Book")
+     }
 }
 
-function showProductData(product:Product){
-    if(product instanceof Book){
-        product.showData();
-    }else if(product instanceof Movie){
-        product.showData();
+interface userData{
+    name:string,
+    age:number,
+    
+}
+
+interface userInfo{
+    email:string,
+    phone:string
+}   
+
+function checkDataType(data:userData|userInfo){
+     
+    if((data as userData).name){
+        console.log("This is user Data")
     }else{
-        product.showData();
+        console.log("This is user Info")
     }
 }
 
-const book=new Book("Book 1",100,1001,"Author 1");
-const movie=new Movie("Movie 1",200,2001,"Director 1");
-showProductData(book);
-showProductData(movie);
-
-
+checkDataType({ name: "Bikram dhami", age: 23 });
+checkDataType({ email: "example@example.com", phone: "1234567890" });

@@ -24,7 +24,7 @@
 // }
 // checkData("Bikram dhami");
 // checkData(23);
-class Product {
+class Product2 {
     name;
     price;
     pid;
@@ -37,7 +37,7 @@ class Product {
         console.log(this.name, this.price, this.pid);
     }
 }
-class Book extends Product {
+class Book extends Product2 {
     author;
     constructor(name, price, pid, author) {
         super(name, price, pid);
@@ -47,28 +47,21 @@ class Book extends Product {
         console.log(this.name, this.price, this.pid, this.author);
     }
 }
-class Movie extends Product {
-    director;
-    constructor(name, price, pid, director) {
-        super(name, price, pid);
-        this.director = director;
-    }
-    showData() {
-        console.log(this.name, this.price, this.pid, this.director);
-    }
-}
-function showProductData(product) {
-    if (product instanceof Book) {
-        product.showData();
-    }
-    else if (product instanceof Movie) {
-        product.showData();
+function showDetails(objects) {
+    if (objects instanceof Product2) {
+        console.log("This is Products");
     }
     else {
-        product.showData();
+        console.log("This is Book");
     }
 }
-const book = new Book("Book 1", 100, 1001, "Author 1");
-const movie = new Movie("Movie 1", 200, 2001, "Director 1");
-showProductData(book);
-showProductData(movie);
+function checkDataType(data) {
+    if (data.name) {
+        console.log("This is user Data");
+    }
+    else {
+        console.log("This is user Info");
+    }
+}
+checkDataType({ name: "Bikram dhami", age: 23 });
+checkDataType({ email: "example@example.com", phone: "1234567890" });
